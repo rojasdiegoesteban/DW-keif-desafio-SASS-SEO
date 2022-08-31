@@ -1,0 +1,136 @@
+@import './libs/variables';
+@import './libs/button';
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+@function size($value){
+    @return $value * $unit;
+}
+
+body{
+    background-color: $primary-color;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+a{
+    color: $secondary-color;
+    text-decoration: none;
+}
+
+h2{
+    font-weight: bolder;
+    font-size: size(6);
+}
+
+h3{
+    font-weight: lighter;
+    font-size: size(3);
+}
+
+.container{
+    background-color: white;
+    margin: 100px auto;
+    width: 1280px;
+    padding: 50px;
+    box-shadow: 0 0 20px 2px rgba(0,0,0,0.1);
+
+    background-image: url(../image/food-bg.jpg);
+    background-size: 100% 100%;
+}
+
+ul{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    display: flex;
+    gap: 20px;
+
+    li{
+        a{
+            @include btn($terciary-color, $font-color, 'true');
+            
+            &:hover{
+                @include btn($secondary-color, $terciary-color, 'false');
+                box-shadow: $box-shadow;
+            }
+        }
+    }
+}
+
+header{
+    nav{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+}
+
+.logo{
+    font-size: size(5);
+}
+
+.prices{
+    .prev{
+        font-size: size(2);
+        font-weight: bolder;
+        color: $terciary-color;
+        text-decoration: line-through;
+    }
+
+    .now{
+        font-size: size(5);
+        font-weight: bolder;
+    }
+}
+
+.row{
+    display: flex;
+    align-items: center;
+    .col{
+        width: 50%;
+    }
+
+    .col-30{
+        width: 30%;
+    }
+
+    .col-70{
+        width: 70%;
+    }
+
+    img{
+        width: 90%;
+    }
+}
+
+.m-auto{
+    margin: 0 auto;
+}
+
+@for $i from 1 to $limit{
+    .m-#{$i}{
+        margin: $i * $unit;
+    }
+}
+
+@for $i from 1 to $limit{
+    .p-#{$i}{
+        padding: $i * $unit;
+    }
+}
+
+@for $i from 1 to $limit{
+    .py-#{$i}{
+        padding: $i * $unit 0;
+    }
+}
+
+@for $i from 1 to 4{
+    .w-#{$i}{
+        width: $i * 25%;
+    }
+}
