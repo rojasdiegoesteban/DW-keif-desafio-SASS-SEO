@@ -1,0 +1,7 @@
+1- incorpore etiquetas meta keywords en todos los html:
+en index.html : "gastronomia, comida mediterranea, restaurant, delivery";
+
+2- incorpore etiquetas meta description en todos los html:
+index.html: "Keif es un emprendimiento de comida mediterranea, atendido por sus propios dueños."
+
+3- agregue etiqueta h1.
